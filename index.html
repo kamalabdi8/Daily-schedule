@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> Weekday Schedule & Tracker</title>
+</head>
+<body>
+
+  <h1>🌟 Weekday Schedule</h1>
+  <h2>⚡ Effective July 1 – Dec 31, 2025</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>5:00 AM – 5:40 AM</td><td>🌅 Wake up, walk to mosque, pray Fajr with Sunnah 🕌</td></tr>
+      <tr><td>5:40 AM – 6:40 AM</td><td>📖 Ibada: Surah Baqarah, 100x Istighfar, Tasbih, Tahlil</td></tr>
+      <tr><td>6:40 AM – 7:10 AM</td><td>💪 Exercise: 30 push-ups, abs workout</td></tr>
+      <tr><td>7:10 AM – 9:40 AM</td><td>😴 Nap (2.5 hours)</td></tr>
+      <tr><td>9:40 AM – 10:00 AM</td><td>☀️ Wake up, pray Duha</td></tr>
+      <tr><td>10:00 AM – 11:30 AM</td><td>🚗 Driving class</td></tr>
+      <tr><td>12:00 PM – 1:00 PM</td><td>📘 At mosque: Read 2 Juz, get ready for Dhuhr</td></tr>
+      <tr><td>1:00 PM – 1:30 PM</td><td>🕋 Dhuhr prayer</td></tr>
+      <tr><td>1:30 PM – 2:00 PM</td><td>🧼 Refresh and 🍽️ Lunch</td></tr>
+      <tr><td>2:00 PM – 4:00 PM</td><td>💼 Work + 📊 Study (Forex)</td></tr>
+      <tr><td>4:00 PM – 4:30 PM</td><td>🕓 Asr prayer</td></tr>
+      <tr><td>4:30 PM – 6:20 PM</td><td>💼 Work + 📊 Study (Forex)</td></tr>
+      <tr><td>6:20 PM – 7:00 PM</td><td>🕌 Maghrib prayer</td></tr>
+      <tr><td>7:00 PM – 8:00 PM</td><td>💼 Work + 📊 Study (Forex)</td></tr>
+      <tr><td>8:00 PM – 8:30 PM</td><td>🕌 Isha prayer</td></tr>
+      <tr><td>8:30 PM – 12:00 AM</td><td>💼 Work + 📊 Study (Software Dev)</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+<h2>📅 Daily Completion Tracker – July to December 2025</h2>
+<p>Click a box to mark ⬜ → ✅ → ❌</p>
+
+<div id="tracker"></div>
+
+<script>
+  const trackerDiv = document.getElementById("tracker");
+  const marks = ["⬜", "✅", "❌"];
+
+  // Number of days in each month
+  const months = {
+    July: 31,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31
+  };
+
+  for (let month in months) {
+    const title = document.createElement("h3");
+    title.innerText = month;
+    trackerDiv.appendChild(title);
+
+    for (let day = 1; day <= months[month]; day++) {
+      const btn = document.createElement("button");
+      btn.innerHTML = `${month} ${day} <span>${marks[0]}</span>`;
+      btn.setAttribute("data-index", 0);
+      btn.onclick = function () {
+        let index = parseInt(btn.getAttribute("data-index"));
+        index = (index + 1) % marks.length;
+        btn.setAttribute("data-index", index);
+        btn.innerHTML = `${month} ${day} <span>${marks[index]}</span>`;
+      };
+      trackerDiv.appendChild(btn);
+      trackerDiv.appendChild(document.createTextNode(" "));
+    }
+
+    trackerDiv.appendChild(document.createElement("hr"));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fcff;
+  padding: 40px;
+  color: #2a4d69;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 14px 20px;
+  text-align: left;
+}
+
+th {
+  background-color: #d9ead3;
+  font-size: 18px;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.calendar-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.day-box {
+  border: 1px solid #ccc;
+  background: #fdfdfd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.mark {
+  font-size: 20px;
+  display: block;
+  margin-top: 6px;
+}
